@@ -6,11 +6,13 @@
     <title>Title</title>
 </head>
 <body>
-<table>
+<table align="center">
     <tr>
         <c:forEach var="film" items="${list}" begin="0" end="1">
             <td>
-                <img src="${pageContext.request.contextPath}${film.imgPath}">
+                <a href="detail?filmId=${film.filmId}">
+                <img style="width: 400px ;height:600px" src="${pageContext.request.contextPath}${film.imgPath}">
+                </a>
                 <p>${film.name}</p>
             </td>
         </c:forEach>

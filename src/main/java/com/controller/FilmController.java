@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.VO.FilmDetailm;
 import com.VO.FilmVO;
 import com.service.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,11 @@ public class FilmController {
         List<FilmVO> list=filmService.selectAll();
         model.addAttribute("list",list);
         return  "list";
+    }
+    @RequestMapping("detail")
+    public String detail(String filmId,Model model){
+        FilmDetailm detail=filmService.detail(filmId);
+        model.addAttribute("detail",detail);
+        return "detail";
     }
 }

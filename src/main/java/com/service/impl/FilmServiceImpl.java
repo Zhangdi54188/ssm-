@@ -1,5 +1,6 @@
 package com.service.impl;
 
+import com.VO.FilmDetailm;
 import com.VO.FilmVO;
 import com.mapper.FilmMapper;
 import com.model.Film;
@@ -17,6 +18,7 @@ public class FilmServiceImpl implements FilmService {
     @Override
     public List<FilmVO> selectAll() {
         List<Film> filmList=filmMapper.getFilms();
+        System.out.println(filmList);
         //知道长度直接给定长度，这样可以会直接创建特定长度，不用进行扩容
         List<FilmVO> filmVOS=new ArrayList<>(filmList.size());
         for(Film film:filmList){
@@ -27,5 +29,19 @@ public class FilmServiceImpl implements FilmService {
             filmVOS.add(filmVO);
         }
         return filmVOS;
+    }
+
+    @Override
+    public FilmDetailm detail(String filmId) {
+        Film film=filmMapper.detail(filmId);
+        FilmDetailm detailm=new FilmDetailm();
+        detailm.setCountry(film.getCountry());
+        detailm.setImg_path(film.getImg_path());
+        detailm.setSynopsis(film.getSynopsis());
+        detailm.setPlay_time(film.getPlay_time());
+        detailm.setPlayer(film.getPlayer());
+        detailm.setLength(film.getLength());
+        detailm.setDirector(film.getDirector());
+        return detailm;
     }
 }

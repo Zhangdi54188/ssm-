@@ -4,6 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.FilmMapper">
     <select id="getFilms" resultType="com.model.Film">
-        select * from film;
+        select id,film_id,film_name,img_path,`length`,play_time,player,synopsis,country,director from film;
+    </select>
+    <select id="detail" resultType="com.model.Film">
+        select id,film_id,film_name,img_path,`length`,play_time,player,synopsis,country,director
+        from film
+        where film_id=#{filmId}
     </select>
 </mapper>
