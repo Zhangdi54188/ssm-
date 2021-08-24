@@ -7,4 +7,5 @@ import java.util.List;
 public interface FilmMapper {
     List<Film> getFilms();
     Film detail(String filmId);
+
 }

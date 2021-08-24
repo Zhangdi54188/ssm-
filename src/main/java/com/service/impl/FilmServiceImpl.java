@@ -42,6 +42,7 @@ public class FilmServiceImpl implements FilmService {
         detailm.setPlayer(film.getPlayer());
         detailm.setLength(film.getLength());
         detailm.setDirector(film.getDirector());
+        detailm.setFilm_id(film.getFilm_id());
         return detailm;
     }
 }

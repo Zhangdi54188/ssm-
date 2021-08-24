@@ -21,10 +21,11 @@ public class FilmController {
         model.addAttribute("list",list);
         return  "list";
     }
-    @RequestMapping("detail")
+    @RequestMapping("/detail")
     public String detail(String filmId,Model model){
         FilmDetailm detail=filmService.detail(filmId);
         model.addAttribute("detail",detail);
         return "detail";
     }
+
 }
