@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.PlayMapper">
+  <resultMap id="BaseResultMap" type="com.model.Play">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="play_id" jdbcType="VARCHAR" property="playId" />
+    <result column="film_id" jdbcType="VARCHAR" property="filmId" />
+    <result column="play_time" jdbcType="TIMESTAMP" property="playTime" />
+    <result column="lan_type" jdbcType="VARCHAR" property="lanType" />
+    <result column="room_id" jdbcType="VARCHAR" property="roomId" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from play
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.model.Play">
+    insert into play (id, play_id, film_id, 
+      play_time, lan_type, room_id, 
+      price)
+    values (#{id,jdbcType=BIGINT}, #{playId,jdbcType=VARCHAR}, #{filmId,jdbcType=VARCHAR}, 
+      #{playTime,jdbcType=TIMESTAMP}, #{lanType,jdbcType=VARCHAR}, #{roomId,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.model.Play">
+    update play
+    set play_id = #{playId,jdbcType=VARCHAR},
+      film_id = #{filmId,jdbcType=VARCHAR},
+      play_time = #{playTime,jdbcType=TIMESTAMP},
+      lan_type = #{lanType,jdbcType=VARCHAR},
+      room_id = #{roomId,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, play_id, film_id, play_time, lan_type, room_id, price
+    from play
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, play_id, film_id, play_time, lan_type, room_id, price
+    from play
+  </select>
+  <select id="selectPlayAll" resultMap="BaseResultMap">
+    select id, play_id, film_id, play_time, lan_type, room_id, price
+    from play
+    where film_id=#{id}
+  </select>
+</mapper>

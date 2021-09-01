@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UserMapper">
+  <select id="selectUser" resultType="com.model.User">
+    select id, user_id, user_name, zjm, y11, y12, y13, is_delete, user_pass
+    from f_user where user_name=#{user.userName}
+  </select>
+  <insert id="register">
+    insert into f_user values(null,11,#{user.userName},"小",null,null,null,1,#{user.password});
+  </insert>
+
+</mapper>
