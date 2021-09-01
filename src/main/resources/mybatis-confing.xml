@@ -12,5 +12,6 @@
         <!--        开启驼峰命名转换：Table(create_time)->domain(createTime)-->
 <!--        一定注意，加了这个就必须按照这个规定来进行使用对于有_这个的必须用驼峰命名-->
 <!--        <setting name="mapUnderscoreToCamelCase" value="true"/>-->
+        <setting name="logImpl" value="LOG4J"/>
     </settings>
 </configuration>

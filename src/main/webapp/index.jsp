@@ -1,6 +1,6 @@
+<%@ page contentType="text/html;utf-8" pageEncoding="UTF-8" %>
 <html>
 <body>
-<h2>Hello World!</h2>
-<jsp:forward page="queryFilm"></jsp:forward>
+<jsp:forward page="/WEB-INF/jsp/first.jsp"/>
 </body>
 </html>
