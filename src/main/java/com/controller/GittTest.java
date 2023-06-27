@@ -7,8 +7,11 @@ public class GittTest {
         System.out.println("你好");
         System.out.println("zhangdi");
 
-        System.out.println("zhangdi");
+        System.out.println("zhangdi111");
         System.out.println("hello  zhangdi");
+
+
+        System.out.println("hebing");
 
     }
 }
