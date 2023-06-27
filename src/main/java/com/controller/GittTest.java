@@ -8,6 +8,7 @@ public class GittTest {
         System.out.println("zhangdi");
 
         System.out.println("zhangdi");
+        System.out.println("hello  zhangdi");
 
     }
 }
